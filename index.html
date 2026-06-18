@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sea-Kiz Name Vote</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="masthead">
+        <div>
+          <p class="eyebrow">Sea-Kiz</p>
+          <h1>Name Vote</h1>
+        </div>
+        <div class="round-badge" aria-label="Blind scoring round">
+          <span>Blind</span>
+          <strong>0-3</strong>
+        </div>
+      </section>
+
+      <section class="panel vote-panel" aria-labelledby="vote-title">
+        <div class="panel-header">
+          <div>
+            <h2 id="vote-title">Score each name</h2>
+            <p>Choose your voter slot, score every option, then save. Votes can be edited until reveal.</p>
+          </div>
+          <div class="voter-row">
+            <label for="voter-name">Voter</label>
+            <select id="voter-name" name="voter-name"></select>
+            <label for="voter-code">Code</label>
+            <input id="voter-code" name="voter-code" type="password" placeholder="Private code" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="legend" aria-label="Score legend">
+          <span><strong>0</strong> no</span>
+          <span><strong>1</strong> maybe</span>
+          <span><strong>2</strong> good</span>
+          <span><strong>3</strong> love</span>
+        </div>
+
+        <form id="vote-form" class="name-grid"></form>
+
+        <div class="actions">
+          <button class="primary" id="save-vote" type="button">Save blind vote</button>
+          <button class="secondary" id="clear-current" type="button">Clear voter</button>
+        </div>
+      </section>
+
+      <section class="panel status-panel" aria-label="Voting status">
+        <div>
+          <h2>Round Status</h2>
+          <p id="status-copy">No votes saved yet.</p>
+        </div>
+      </section>
+
+      <section class="panel waiting-panel is-hidden" id="waiting-panel" aria-label="Reveal countdown">
+        <p class="eyebrow">Shared Reveal</p>
+        <div id="countdown" class="countdown">5</div>
+      </section>
+
+      <section class="panel results-panel is-hidden" id="results-panel" aria-labelledby="results-title">
+        <div class="panel-header">
+          <div>
+            <h2 id="results-title">Results</h2>
+            <p>Unveiled from lowest total score to highest total score.</p>
+          </div>
+        </div>
+        <div id="results-list" class="results-list"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

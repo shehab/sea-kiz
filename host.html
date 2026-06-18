@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sea-Kiz Host</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell host-shell">
+      <section class="masthead">
+        <div>
+          <p class="eyebrow">Sea-Kiz</p>
+          <h1>Host Room</h1>
+        </div>
+        <a class="text-link" href="index.html">Voting room</a>
+      </section>
+
+      <section class="panel vote-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Round controls</h2>
+            <p>Lock voting, start the shared reveal, or reopen the round.</p>
+          </div>
+          <div class="voter-row">
+            <label for="host-code">Host code</label>
+            <input id="host-code" type="password" placeholder="Host code" />
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="primary" id="start-reveal" type="button">Start bottom-up reveal</button>
+          <button class="secondary" id="lock-voting" type="button">Lock voting</button>
+          <button class="secondary" id="open-voting" type="button">Open voting</button>
+          <button class="ghost" id="reset-round" type="button">Reset votes</button>
+        </div>
+      </section>
+
+      <section class="panel status-panel">
+        <div>
+          <h2>Live Status</h2>
+          <p id="host-status">Loading...</p>
+        </div>
+      </section>
+
+      <section class="panel results-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Current totals</h2>
+            <p>Visible here for hosting; voters only see this after reveal.</p>
+          </div>
+        </div>
+        <div id="host-results" class="results-list"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config.js"></script>
+    <script src="host.js"></script>
+  </body>
+</html>
