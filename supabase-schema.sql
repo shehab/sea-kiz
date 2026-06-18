@@ -19,6 +19,11 @@ create table if not exists public.votes (
 alter table public.rounds enable row level security;
 alter table public.votes enable row level security;
 
+grant usage on schema public to anon, authenticated;
+grant select, insert, update on public.rounds to anon, authenticated;
+grant select, insert, update, delete on public.votes to anon, authenticated;
+grant usage, select on sequence public.votes_id_seq to anon, authenticated;
+
 drop policy if exists "Rounds are readable" on public.rounds;
 drop policy if exists "Rounds can be created from the app" on public.rounds;
 drop policy if exists "Rounds can be updated from the host page" on public.rounds;
