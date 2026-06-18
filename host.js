@@ -27,6 +27,7 @@ const names = [
   "Nyota",
   "Sea-Kiz",
   "Ziraleet",
+  "Mpenzi",
 ];
 
 let votes = [];

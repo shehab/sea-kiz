@@ -21,6 +21,7 @@ const names = [
   "Nyota",
   "Sea-Kiz",
   "Ziraleet",
+  "Mpenzi",
 ];
 
 const config = window.SEA_KIZ_CONFIG;
