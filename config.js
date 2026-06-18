@@ -8,5 +8,5 @@ window.SEA_KIZ_CONFIG = {
     { name: "adel", code: "tide" },
     { name: "joby", code: "bay" },
   ],
-  hostCode: "change-this-host-code",
+  hostCode: "sea-kiz-host-2026",
 };
